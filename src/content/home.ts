@@ -57,6 +57,7 @@ export type HomeContent = {
   nav: {
     features: string;
     docs: string;
+    lab: string;
     evaluation: string;
     github: string;
   };
@@ -118,6 +119,7 @@ export const HOME_CONTENT: Record<LanguageCode, HomeContent> = {
     nav: {
       features: "Features",
       docs: "Docs",
+      lab: "Lab",
       evaluation: "See workflows",
       github: "GitHub",
     },
@@ -357,6 +359,7 @@ export const HOME_CONTENT: Record<LanguageCode, HomeContent> = {
     nav: {
       features: "Tính năng",
       docs: "Tài liệu",
+      lab: "Phòng Lab",
       evaluation: "Xem workflow",
       github: "GitHub",
     },

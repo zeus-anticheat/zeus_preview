@@ -1,7 +1,19 @@
 import React from 'react';
 
+export type MinecraftIconType =
+  | 'sword'
+  | 'pickaxe'
+  | 'heart'
+  | 'creeper'
+  | 'diamond'
+  | 'grass'
+  | 'shield'
+  | 'potion'
+  | 'star'
+  | 'block';
+
 interface MinecraftIconProps {
-  type: 'sword' | 'pickaxe' | 'heart' | 'creeper' | 'diamond' | 'grass' | 'shield' | 'potion' | 'star' | 'block';
+  type: MinecraftIconType;
   size?: number;
   color?: string;
   className?: string;

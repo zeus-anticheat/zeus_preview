@@ -1,6 +1,8 @@
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Home from './pages/Home';
 import Docs from './pages/Docs';
+import Lab from './pages/Lab';
+import ReplayViewer from './pages/ReplayViewer';
 import Terms from './pages/Terms';
 import Privacy from './pages/Privacy';
 import { useEffect, useState } from 'react';
@@ -66,14 +68,33 @@ function App() {
                         </Link>
                         <div className="flex items-center gap-3">
                           <nav className="hidden md:flex gap-8 items-center">
-                            <Link to="/" className="text-text-sec hover:text-text-main no-underline text-[0.95rem] font-medium transition-colors">{content.nav.features}</Link>
+                            <button
+                                type="button"
+                                onClick={() => {
+                                    const el = document.getElementById('features');
+                                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+                                    else window.location.href = '/#features';
+                                }}
+                                className="text-text-sec hover:text-text-main no-underline text-[0.95rem] font-medium transition-colors bg-transparent border-0 cursor-pointer p-0"
+                            >
+                                {content.nav.features}
+                            </button>
                             <Link to="/docs" className="text-text-sec hover:text-text-main no-underline text-[0.95rem] font-medium transition-colors">{content.nav.docs}</Link>
+                            <Link to="/lab" className="text-text-sec hover:text-text-main no-underline text-[0.95rem] font-medium transition-colors">{content.nav.lab}</Link>
                             <a href="https://github.com/zeus-anticheat/zeus_anticheat_mc" target="_blank" rel="noopener noreferrer" className="text-text-sec hover:text-text-main no-underline text-[0.95rem] font-medium transition-colors">
                                 <i className="fa-brands fa-github mr-1"></i> {content.nav.github}
                             </a>
-                            <a href="/#operations" className="bg-white/5 text-text-main border border-card-border backdrop-blur-sm px-4 py-2 rounded-lg text-[0.9rem] font-semibold hover:bg-white/10 hover:border-text-sec transition-all">
+                            <button
+                                type="button"
+                                onClick={() => {
+                                    const el = document.getElementById('operations');
+                                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+                                    else window.location.href = '/#operations';
+                                }}
+                                className="bg-white/5 text-text-main border border-card-border backdrop-blur-sm px-4 py-2 rounded-lg text-[0.9rem] font-semibold hover:bg-white/10 hover:border-text-sec transition-all cursor-pointer"
+                            >
                                 {content.nav.evaluation}
-                            </a>
+                            </button>
                           </nav>
                           <LanguageToggle language={language} onChange={setLanguage} />
                         </div>
@@ -84,6 +105,8 @@ function App() {
                     <Routes>
                         <Route path="/" element={<Home language={language} />} />
                         <Route path="/docs/*" element={<Docs language={language} />} />
+                        <Route path="/lab" element={<Lab language={language} />} />
+                        <Route path="/lab/replay/:sessionId" element={<ReplayViewer language={language} />} />
                         <Route path="/terms" element={<Terms language={language} />} />
                         <Route path="/privacy" element={<Privacy language={language} />} />
                     </Routes>

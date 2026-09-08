@@ -11,4 +11,11 @@ Nền tảng được thiết kế với tính mô-đun cao và hiệu năng c�
 3. **Dynamic Inference**: Sử dụng các mô hình deep learning tinh vi để phân tích các mẫu hành vi. Engine có thể điều chỉnh linh hoạt độ sâu đánh giá đối với các chuyển động chưa rõ ràng nhằm đảm bảo đưa ra phán quyết tính hợp lệ đáng tin cậy.
 4. **Seamless Integration**: Các tích hợp gốc chặn các luồng telemetry một cách an toàn trực tiếp từ pipeline sự kiện của máy chủ và chuyển tiếp chúng đến lõi phân tích theo thời gian thực.
 
+## Hệ sinh thái & Nền tảng hỗ trợ
+
+Zeus kết nối linh hoạt với nhiều runtime máy chủ thông qua các gateway gọn nhẹ:
+- **Paper / Spigot / Folia**: Adapter hiện đại hỗ trợ từ phiên bản 1.14 đến 1.21.x, kèm hỗ trợ mở rộng cho các phiên bản cũ 1.8 - 1.13.x.
+- **Fabric**: Adapter Fabric chuyên dụng cho các server modded và setup tương thích vanilla hiện đại.
+- **Out-of-Band Rust Core**: Lõi phân tích độc lập chạy song song mà không gây tụt TPS hoặc lag giật trong game.
+
 Nếu bạn đang tìm cách tích hợp hoặc cấu hình nền tảng, vui lòng chuyển sang các hướng dẫn kỹ thuật bên dưới.

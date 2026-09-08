@@ -1,34 +1,33 @@
-# Quản lý ML Model
+# Adaptive Review & Quản lý Profile
 
-Zeus Platform cung cấp một giao diện mạnh mẽ để quản lý các mô hình Machine Learning. Các model là những thành phần cốt lõi đánh giá hành vi người chơi nhằm phát hiện bất thường và các hành vi gian lận tiềm ẩn.
+Zeus Platform cung cấp giao diện tích hợp để quản lý các profile Adaptive Review và phân công máy chủ. Adaptive Review học các baseline của cộng đồng và hỗ trợ các operator đánh giá các hành vi chơi game đáng ngờ.
 
-## Hiểu về các Model
+## Hiểu về các Profile
 
-Mỗi model tương ứng với một kịch bản gameplay cụ thể:
-- **Combat**: Phân tích độ chính xác khi đánh (hit accuracy), tầm tấn công (attack reach), tần suất tương tác và góc nhìn của người chơi.
-- **Interact**: Xem xét tỷ lệ nhấp chuột (click rates), tốc độ đặt khối (block placement speeds) và thời gian chuỗi tương tác (interaction sequence timings).
-- **Movement**: Đánh giá vận tốc XYZ (XYZ velocity), thời gian trên không (air time), khoảng cách rơi (fall distance) và các sự kiện dịch chuyển tức thời (teleportation events).
-- **Transaction**: Giám sát các sự kiện nhấp vào kho đồ (inventory click events) và tính toàn vẹn của chuỗi packet.
+Các profile thích ứng với lối chơi và chế độ chơi cụ thể của từng máy chủ:
+- **Hermes Simulation Only**: Luồng đánh giá vật lý xác định (deterministic), không dùng ML dựa trên các tick máy chủ chính xác.
+- **Adaptive Review Profile**: Thu thập các đánh giá cờ vi phạm, học baseline tự nhiên của cộng đồng và ưu tiên các hành vi đáng nghi mà không cần đoán chỉnh ngưỡng thủ công.
 
-Để tìm hiểu thêm về các kiến trúc ML nền tảng (Fast, Thinking, Balanced và Adaptive), vui lòng tham khảo tài liệu [Loại mô hình AI](./ai-model-types.md).
+## Tạo Profile mới
 
-## Tạo Model mới
+1. Điều hướng đến **Adaptive Review Profiles** trong thanh menu bên của dashboard.
+2. Nhấn **Create profile**.
+3. Đặt tên mô tả cho profile của bạn (ví dụ: `KitPvP Standard`, `Survival Balanced`).
+4. Sau khi tạo, profile bắt đầu ở trạng thái `untrained` cho đến khi thu thập đủ dữ liệu gắn nhãn.
 
-1. Điều hướng đến phần **Models** trong giao diện.
-2. Nhấn **Create New Model**.
-3. Chọn **Base Template** (ví dụ: `Strict` hoặc `Standard`).
-4. Gán một tên duy nhất.
-5. Model sẽ được khởi tạo với cấu hình baseline, bạn có thể tinh chỉnh sau.
+## Quản lý Training và Phiên bản
 
-## Chỉnh sửa các Model hiện có
+1. Xem các cờ vi phạm được gửi đến trong tab **Flag Review** và phân loại chúng là vi phạm đã xác nhận hoặc báo động giả.
+2. Khi đã tích lũy đủ số nhãn đánh giá, hãy khởi chạy tác vụ huấn luyện bằng nút **Train profile**.
+3. Khi quá trình huấn luyện hoàn tất, hãy kích hoạt phiên bản mô hình mới hoặc quay lại bất kỳ phiên bản trước đó chỉ với một cú nhấp chuột.
 
-Từ Model Dashboard, chọn một model để xem cấu hình của nó. Bạn có thể điều chỉnh:
-- **Evaluation Context Window**: Xác định lượng hoạt động lịch sử cần thiết trước khi thực hiện một lần inference.
-- **Warmup Windows**: Khoảng thời gian đệm để cho phép các bộ đệm nội bộ ổn định trước khi đánh giá hành vi của người chơi.
-- **Thresholds**: Điều chỉnh khoảng tin cậy (confidence intervals) để quyết định khi nào bất thường kích hoạt cảnh báo.
+## Phân công máy chủ (Server Assignment)
 
-## Lưu trữ và Profiles
+Việc gán profile được quản lý cục bộ trên từng phiên bản Zeus trong **Adaptive Review -> Servers**:
+- Chọn bất kỳ máy chủ Minecraft đang kết nối (`ip:port`).
+- Gán một profile hiện có hoặc giữ máy chủ chạy chế độ mô phỏng thuần Hermes.
+- Cài đặt được lưu cục bộ trong `config.yaml` mà không yêu cầu khởi động lại máy chủ.
 
-Zeus tự động tuần tự hóa (serialize) và lưu trữ các ML model đã tạo trong thư mục `ml_profiles/` ở thư mục gốc của dự án. Điều này giúp việc sao lưu, chia sẻ và quản lý phiên bản (version control) các model của bạn giữa các máy chủ khác nhau trở nên cực kỳ dễ dàng.
+## Thùng rác có thể khôi phục (Recoverable Trash)
 
-> **Lưu ý:** Mỗi khi bạn chỉnh sửa một model thông qua giao diện, cấu hình ML toàn cục sẽ được cập nhật động (hot-reloaded) để ngăn ngừa bất kỳ thời gian ngừng hoạt động nào của máy chủ.
+Các profile bị xóa được chuyển vào **Profile Trash**, nơi chúng có thể được khôi phục trong vòng 24 giờ trước khi bị xóa vĩnh viễn.

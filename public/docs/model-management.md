@@ -1,34 +1,33 @@
-# ML Model Management
+# Adaptive Review & Profiles
 
-The Zeus Platform provides a robust UI for managing Machine Learning models. Models are the core components that evaluate player behavior to detect anomalies and potential hacks.
+The Zeus Platform provides an integrated UI for managing Adaptive Review profiles and server assignments. Adaptive Review learns community baselines and assists operators in evaluating suspicious gameplay behavior.
 
-## Understanding Models
+## Understanding Profiles
 
-Each model corresponds to a specific gameplay scenario:
-- **Combat**: Analyzes hit accuracy, attack reach, interaction frequency, and player viewing angles.
-- **Interact**: Looks at click rates, block placement speeds, and interaction sequence timings.
-- **Movement**: Evaluates XYZ velocity, air time, fall distance, and teleportation events.
-- **Transaction**: Monitors inventory click events and packet sequence integrity.
+Profiles adapt to server-specific playstyles and game modes:
+- **Hermes Simulation Only**: Deterministic, zero-ML physics evaluation path using exact server ticks.
+- **Adaptive Review Profile**: Collects flag reviews, learns community baselines, and prioritizes suspicious behavior without manual threshold guessing.
 
-To learn more about the underlying ML architectures (Fast, Thinking, Balanced, and Adaptive), please refer to our [AI Model Types](./ai-model-types.md) documentation.
+## Creating a Profile
 
-## Creating a New Model
+1. Navigate to **Adaptive Review Profiles** in the dashboard sidebar.
+2. Click **Create profile**.
+3. Provide a descriptive name for your profile (e.g., `KitPvP Standard`, `Survival Balanced`).
+4. Once created, the profile starts in `untrained` status until sufficient review data is collected.
 
-1. Navigate to the **Models** section in the UI.
-2. Click **Create New Model**.
-3. Select the **Base Template** (e.g., `Strict` or `Standard`).
-4. Assign a unique name.
-5. The model will be initialized with a baseline configuration, which you can later refine.
+## Training and Version Management
 
-## Modifying Existing Models
+1. Review incoming flags in the **Flag Review** tab and classify them as confirmed anomalies or false flags.
+2. When sufficient labels have been collected, initiate a training job via **Train profile**.
+3. Once training succeeds, activate the new model version or roll back to any previous version with a single click.
 
-From the Model Dashboard, select a model to view its configurations. You can adjust:
-- **Evaluation Context Window**: Determines how much historical activity is required before an inference runs.
-- **Warmup Windows**: A buffer time to allow internal buffers to settle before evaluating the player's behavior.
-- **Thresholds**: Adjust confidence intervals to dictate when an anomaly triggers an alert.
+## Server Assignment
 
-## Storage and Profiles
+Server assignments are managed locally on each Zeus instance under **Adaptive Review -> Servers**:
+- Select any live connected Minecraft server (`ip:port`).
+- Assign an existing profile or keep it on pure Hermes simulation.
+- Settings are saved locally in `config.yaml` without requiring server restarts.
 
-Zeus automatically serializes and stores created ML models within the `ml_profiles/` directory in the project's root. This makes it incredibly easy to back up, share, and version control your models across different servers.
+## Recoverable Trash
 
-> **Note:** Whenever you modify a model through the UI, the global ML configuration is updated dynamically (hot-reloaded) to prevent any server downtime.
+Deleted profiles are moved to **Profile Trash** where they can be restored within 24 hours before permanent removal.

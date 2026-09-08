@@ -64,20 +64,8 @@ export const DOCS_ENTRIES: DocsEntry[] = [
       vi: '/docs/vi/model-management.md',
     },
     label: {
-      en: 'Model Tuning',
-      vi: 'Tinh chỉnh mô hình',
-    },
-  },
-  {
-    id: 'aiModelTypes',
-    path: '/docs/ai-model-types',
-    source: {
-      en: '/docs/ai-model-types.md',
-      vi: '/docs/vi/ai-model-types.md',
-    },
-    label: {
-      en: 'AI Model Types',
-      vi: 'Loại mô hình AI',
+      en: 'Adaptive Review',
+      vi: 'Adaptive Review',
     },
   },
 ];
@@ -88,17 +76,47 @@ export const DOCS_UI_COPY: Record<
     sidebarHeading: string;
     notFoundMarkdown: string;
     errorMarkdown: string;
+    previous: string;
+    next: string;
+    copyCode: string;
+    copied: string;
+    ecosystemTags: {
+      rust: string;
+      paper: string;
+      fabric: string;
+      folia: string;
+    };
   }
 > = {
   en: {
     sidebarHeading: 'Documentation',
     notFoundMarkdown: '# 404 - Page Not Found\nThe requested documentation page could not be found.',
     errorMarkdown: '# Error\nFailed to load documentation content.',
+    previous: 'Previous',
+    next: 'Next',
+    copyCode: 'Copy',
+    copied: 'Copied!',
+    ecosystemTags: {
+      rust: 'Rust Engine',
+      paper: 'Paper / Spigot',
+      fabric: 'Fabric Mod',
+      folia: 'Folia Supported',
+    },
   },
   vi: {
     sidebarHeading: 'Tài liệu',
     notFoundMarkdown: '# 404 - Không tìm thấy trang\nKhông tìm thấy trang tài liệu đã yêu cầu.',
     errorMarkdown: '# Lỗi\nKhông tải được nội dung tài liệu.',
+    previous: 'Bài trước',
+    next: 'Bài tiếp theo',
+    copyCode: 'Sao chép',
+    copied: 'Đã chép!',
+    ecosystemTags: {
+      rust: 'Rust Engine',
+      paper: 'Paper / Spigot',
+      fabric: 'Fabric Mod',
+      folia: 'Hỗ trợ Folia',
+    },
   },
 };
 

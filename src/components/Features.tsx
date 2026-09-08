@@ -48,6 +48,80 @@ const Features: React.FC<FeaturesProps> = ({ content }) => {
         ))}
       </div>
 
+      {/* Minecraft Cheat Detection Matrix overview */}
+      <div className="mt-12 p-6 rounded-2xl border border-card-border bg-[#0d1017] shadow-xl">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6 pb-4 border-b border-white/5">
+          <div className="flex items-center gap-3">
+            <MinecraftIcon type="sword" size={24} color="#ef4444" />
+            <div>
+              <h4 className="text-lg font-bold text-text-main font-mono">MINECRAFT DETECTION MATRIX</h4>
+              <p className="text-xs text-text-sec">Supported check modules across all Minecraft versions (1.8 - 1.21+)</p>
+            </div>
+          </div>
+          <span className="text-xs font-mono px-2.5 py-1 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+            HERMES SIMULATION ACTIVE
+          </span>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="p-4 rounded-xl border border-white/5 bg-white/[0.02]">
+            <div className="flex items-center gap-2 mb-2 text-cyan-400 font-bold font-mono text-sm">
+              <MinecraftIcon type="shield" size={16} color="#22d3ee" />
+              <span>Movement & Physics</span>
+            </div>
+            <p className="text-xs text-text-sec mb-3">Deterministic simulation against vanilla bounding boxes & tick rates.</p>
+            <div className="flex flex-wrap gap-1.5 font-mono text-[11px]">
+              <span className="px-2 py-0.5 rounded bg-white/5 text-text-sec">Fly</span>
+              <span className="px-2 py-0.5 rounded bg-white/5 text-text-sec">Speed</span>
+              <span className="px-2 py-0.5 rounded bg-white/5 text-text-sec">NoSlow</span>
+              <span className="px-2 py-0.5 rounded bg-white/5 text-text-sec">Jesus</span>
+              <span className="px-2 py-0.5 rounded bg-white/5 text-text-sec">Step</span>
+            </div>
+          </div>
+
+          <div className="p-4 rounded-xl border border-white/5 bg-white/[0.02]">
+            <div className="flex items-center gap-2 mb-2 text-rose-400 font-bold font-mono text-sm">
+              <MinecraftIcon type="sword" size={16} color="#f43f5e" />
+              <span>Combat & Aim</span>
+            </div>
+            <p className="text-xs text-text-sec mb-3">Sub-tick raytracing with historical hitboxes & rotational delta tracking.</p>
+            <div className="flex flex-wrap gap-1.5 font-mono text-[11px]">
+              <span className="px-2 py-0.5 rounded bg-white/5 text-text-sec">Reach (&gt;3.0m)</span>
+              <span className="px-2 py-0.5 rounded bg-white/5 text-text-sec">Killaura</span>
+              <span className="px-2 py-0.5 rounded bg-white/5 text-text-sec">AutoClicker</span>
+              <span className="px-2 py-0.5 rounded bg-white/5 text-text-sec">Hitbox</span>
+            </div>
+          </div>
+
+          <div className="p-4 rounded-xl border border-white/5 bg-white/[0.02]">
+            <div className="flex items-center gap-2 mb-2 text-amber-400 font-bold font-mono text-sm">
+              <MinecraftIcon type="pickaxe" size={16} color="#f59e0b" />
+              <span>World & Mining</span>
+            </div>
+            <p className="text-xs text-text-sec mb-3">Per-dig item provenance & block break latency verification.</p>
+            <div className="flex flex-wrap gap-1.5 font-mono text-[11px]">
+              <span className="px-2 py-0.5 rounded bg-white/5 text-text-sec">FastBreak</span>
+              <span className="px-2 py-0.5 rounded bg-white/5 text-text-sec">Nuker</span>
+              <span className="px-2 py-0.5 rounded bg-white/5 text-text-sec">Scaffold</span>
+              <span className="px-2 py-0.5 rounded bg-white/5 text-text-sec">FastPlace</span>
+            </div>
+          </div>
+
+          <div className="p-4 rounded-xl border border-white/5 bg-white/[0.02]">
+            <div className="flex items-center gap-2 mb-2 text-purple-400 font-bold font-mono text-sm">
+              <MinecraftIcon type="block" size={16} color="#c084fc" />
+              <span>Protocol & Network</span>
+            </div>
+            <p className="text-xs text-text-sec mb-3">Tick-drift detection, transaction ID order, and payload size bounds.</p>
+            <div className="flex flex-wrap gap-1.5 font-mono text-[11px]">
+              <span className="px-2 py-0.5 rounded bg-white/5 text-text-sec">Timer Exploit</span>
+              <span className="px-2 py-0.5 rounded bg-white/5 text-text-sec">BadPackets</span>
+              <span className="px-2 py-0.5 rounded bg-white/5 text-text-sec">Transaction</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div className="mt-16 rounded-2xl border border-card-border bg-white/5 p-6 md:p-8">
         <div className="max-w-[720px] mb-8">
           <h3 className="text-2xl font-bold mb-3 text-text-main">{content.workflow.heading}</h3>

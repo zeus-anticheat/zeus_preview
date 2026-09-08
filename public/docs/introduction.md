@@ -11,4 +11,11 @@ The platform is designed to be highly modular and incredibly performant, executi
 3. **Dynamic Inference**: Employs sophisticated deep-learning models to analyze patterns of behavior. The engine can dynamically adjust evaluation depth for ambiguous movements to ensure a reliable legitimacy verdict.
 4. **Seamless Integration**: Native integrations securely intercept telemetry streams directly from the server event pipelines and relay them to the analysis core in real-time.
 
+## Ecosystem & Supported Platforms
+
+Zeus connects to multiple server runtimes via specialized, lightweight gateways:
+- **Paper / Spigot / Folia**: Modern adapter supporting versions 1.14 through 1.21.x, as well as legacy 1.8 - 1.13.x support.
+- **Fabric**: Dedicated exact-version Fabric adapters for modded and modern vanilla-compatible setups.
+- **Out-of-Band Rust Core**: Independent analysis engine running alongside servers without causing TPS drops or tick lag.
+
 If you are looking to integrate or configure the platform, proceed to our technical guides below.

@@ -1,20 +1,18 @@
-# Tích hợp Custom Player Features
+# Đồng bộ Telemetry & Custom Features
 
-Theo mặc định, Zeus tự động giám sát các hành vi cấp cao của người chơi thông qua dữ liệu telemetry về movement (di chuyển), combat (chiến đấu) và interaction (tương tác). Tuy nhiên, các máy chủ được tùy chỉnh sâu có thể đưa vào các cơ chế làm thay đổi chuyển động — chẳng hạn như công thức knockback tùy chỉnh, gia tốc (momentum) khi dùng phép thuật, hoặc các vật phẩm đặc biệt.
+Mặc định, Zeus tự động giám sát các hành vi cấp cao của người chơi thông qua dữ liệu telemetry về di chuyển (movement), chiến đấu (combat), tương tác (interaction), giao dịch (transaction) và mạng (network). Khi máy chủ có các cơ chế tùy biến riêng—chẳng hạn như bàn nhảy (launch pad), hiệu ứng đẩy lùi đặc biệt, hoặc kỹ năng vật phẩm—Zeus cung cấp các điểm tích hợp để điều phối trạng thái gameplay.
 
-Để đảm bảo neural network hiểu được các yếu tố bên ngoài này, nền tảng cung cấp các API chuyên dụng để truyền tải dữ liệu telemetry cho các custom feature (tính năng tùy chỉnh).
+## Cách trạng thái đồng bộ hóa
 
-## Custom Feature đồng bộ hóa như thế nào?
+Khi một hành động gameplay tùy chỉnh diễn ra, dữ liệu có thể được truyền đến core engine để cung cấp ngữ cảnh trạng thái:
 
-Khi một sự kiện custom feature được kích hoạt, dữ liệu sẽ nhanh chóng được truyền đến core analysis engine. Sức mạnh thực sự của hệ thống này nằm ở khả năng tích hợp theo thời gian (temporal integration):
-
-1. **Synchronous Injection**: Custom feature được đồng bộ hóa nghiêm ngặt theo thời gian thực với dữ liệu trạng thái hiện tại của người chơi. Khi người chơi di chuyển, tấn công hoặc nhảy, ML inference engine sẽ gắn siêu dữ liệu (metadata) tùy chỉnh của bạn vào chính xác tick mili-giây đó.
-2. **Unified Snapshot Generation**: Inference engine sẽ tiếp nhận thông tin này cùng lúc với các movement feature tự nhiên. Điều này đảm bảo mô hình không đánh giá sai một kỹ năng di chuyển tùy chỉnh là bất thường, vì bối cảnh tùy chỉnh rõ ràng đó được đánh giá đồng thời.
+1. **Synchronous Injection**: Các sự kiện trạng thái được đồng bộ hóa nghiêm ngặt với luồng packet của người chơi gửi đến. Khi người chơi di chuyển, tấn công hoặc tương tác, ngữ cảnh trạng thái sẽ được gắn kết vào chính xác tick mili-giây đó.
+2. **Context-Aware Evaluation**: Engine tiếp nhận siêu dữ liệu này cùng với các packet di chuyển và tương tác thô, đảm bảo các chuyển động hoặc kỹ năng tùy biến được đánh giá với đầy đủ ngữ cảnh thích hợp, tránh bị nhận diện nhầm là bất thường.
 
 ## Cung cấp Custom Telemetry
 
-Để thêm các số liệu tùy chỉnh vào luồng telemetry:
-1. **Capture Event**: Theo dõi sự kiện gameplay cụ thể hoặc thay đổi trạng thái game của bạn.
-2. **Construct Payload**: Phân nhóm metadata tùy chỉnh — dưới dạng số liệu (numeric metrics) hoặc cờ logic (boolean flags) — vào định dạng external feature tiêu chuẩn.
-3. **Dispatch**: Truyền tải dữ liệu telemetry đã được tuần tự hóa (serialized) đến engine thông qua các adapter bridges được cung cấp.
-4. **Automatic Normalization**: Nền tảng lõi tự động áp dụng các giới hạn và tỷ lệ phù hợp cho các luồng dữ liệu tùy chỉnh gửi đến, đảm bảo số liệu mới của bạn phù hợp một cách đồng nhất trong phân phối dữ liệu của ML model.
+Để thêm số liệu tùy chỉnh vào luồng telemetry:
+1. **Capture Event**: Theo dõi sự kiện gameplay cụ thể hoặc thay đổi trạng thái game trong gateway hoặc plugin máy chủ.
+2. **Construct Payload**: Đóng gói metadata tùy chỉnh vào định dạng packet tiêu chuẩn (`PacketPlayerCustomFeature` qua mã `0x20`).
+3. **Dispatch**: Truyền tải telemetry đã tuần tự hóa đến engine qua các adapter bridge UDP được cung cấp.
+4. **Automatic Normalization**: Nền tảng lõi chuẩn hóa các luồng dữ liệu tùy chỉnh gửi đến, đảm bảo số liệu mới phù hợp một cách đồng nhất trong pipeline đánh giá.

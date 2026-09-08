@@ -137,12 +137,15 @@ body {
   background: #333;
 }
 
-/* Minecraft pixel grid background */
+/* Minecraft panoramic hero background */
 .mc-pixel-bg {
+  background-color: var(--bg-color);
   background-image: 
-    linear-gradient(rgba(34, 211, 238, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(34, 211, 238, 0.03) 1px, transparent 1px);
-  background-size: 16px 16px;
+    linear-gradient(180deg, rgba(7, 9, 14, 0.72) 0%, rgba(7, 9, 14, 0.88) 60%, #07090e 100%),
+    url('/images/minecraft_panorama.webp');
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
 }
 
 /* Pixel art style divider */
@@ -186,4 +189,20 @@ body {
   image-rendering: pixelated;
   image-rendering: -moz-crisp-edges;
   image-rendering: crisp-edges;
+}
+
+/* Minecraft Server HUD card */
+.mc-server-hud {
+  background: rgba(18, 21, 30, 0.85);
+  border: 1px solid var(--card-border);
+}
+
+/* Minecraft Button tactile look */
+.mc-btn-tactile {
+  box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.15), inset -1px -1px 0 rgba(0, 0, 0, 0.3);
+}
+
+@keyframes flag-pulse {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.3); }
 }
