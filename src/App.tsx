@@ -134,8 +134,8 @@ function App() {
                             <div>
                                 <h4 className="text-text-main font-semibold mb-5 text-[1rem]">{content.footer.ecosystem}</h4>
                                 <ul className="list-none p-0 m-0">
-                                    <li className="mb-3"><a href="https://github.com/zeus-anticheat/zeus_anticheat_mc" target="_blank" rel="noopener noreferrer" className="text-text-sec hover:text-accent no-underline text-[0.9rem] transition-colors">{content.footer.links.gateway}</a></li>
-                                    <li className="mb-3"><a href="https://github.com/zeus-anticheat/zeus_anticheat_mc" target="_blank" rel="noopener noreferrer" className="text-text-sec hover:text-accent no-underline text-[0.9rem] transition-colors">{content.footer.links.fabric}</a></li>
+                                    <li className="mb-3"><a href="https://github.com/zeus-anticheat/zeus_gateway" target="_blank" rel="noopener noreferrer" className="text-text-sec hover:text-accent no-underline text-[0.9rem] transition-colors">{content.footer.links.gateway}</a></li>
+                                    <li className="mb-3"><a href="https://github.com/zeus-anticheat/zeus_gateway" target="_blank" rel="noopener noreferrer" className="text-text-sec hover:text-accent no-underline text-[0.9rem] transition-colors">{content.footer.links.fabric}</a></li>
                                     <li className="mb-3"><Link to="/docs/configuration" className="text-text-sec hover:text-accent no-underline text-[0.9rem] transition-colors">{content.footer.links.backend}</Link></li>
                                     <li className="mb-3"><Link to="/docs/ui-interaction" className="text-text-sec hover:text-accent no-underline text-[0.9rem] transition-colors">{content.footer.links.dashboard}</Link></li>
                                 </ul>
