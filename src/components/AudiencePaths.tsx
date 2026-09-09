@@ -13,7 +13,7 @@ const AudiencePaths: React.FC<AudiencePathsProps> = ({ content }) => {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-cyan-500/[0.03] rounded-full blur-3xl pointer-events-none -z-10"></div>
 
       <div className="container-custom">
-        <div className="max-w-[760px] mx-auto text-center mb-16">
+        <div className="max-w-[760px] mx-auto text-center mb-16 flex flex-col items-center">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 border border-accent/20 text-accent text-xs font-semibold uppercase tracking-wider mb-4">
             <MinecraftIcon type="shield" size={13} color="#22d3ee" />
             Roles & Value Paths

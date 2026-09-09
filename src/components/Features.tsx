@@ -14,7 +14,7 @@ const Features: React.FC<FeaturesProps> = ({ content }) => {
       <div className="absolute bottom-10 left-1/4 w-[500px] h-[300px] bg-cyan-500/[0.03] rounded-full blur-3xl pointer-events-none -z-10"></div>
 
       <div className="container-custom">
-        <div className="text-center max-w-[700px] mx-auto mb-16">
+        <div className="text-center max-w-[700px] mx-auto mb-16 flex flex-col items-center">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-semibold uppercase tracking-wider mb-4">
             <MinecraftIcon type="diamond" size={13} color="#22d3ee" />
             Core Capabilities

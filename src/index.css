@@ -66,7 +66,6 @@ body {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   padding-bottom: 0.15em;
-  display: inline-block;
 }
 
 .accent-gradient {
@@ -75,7 +74,6 @@ body {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   padding-bottom: 0.15em;
-  display: inline-block;
 }
 
 .glass-card {
