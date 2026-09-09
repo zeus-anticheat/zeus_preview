@@ -32,6 +32,15 @@ const Hero: React.FC<HeroProps> = ({ content, freeTrialBanner }) => {
 
       <div className="container-custom relative z-10">
         <div className="relative max-w-4xl mx-auto">
+          {/* Decorative Official Steve Promo Character on right desktop */}
+          <div className="hidden xl:block absolute -right-44 -bottom-8 w-64 pointer-events-none select-none z-0 transition-transform duration-700 hover:scale-105">
+            <img
+              src="/steve.webp"
+              alt="Minecraft Steve"
+              className="w-full h-auto drop-shadow-[0_20px_40px_rgba(0,0,0,0.7)] filter drop-shadow-[0_0_25px_rgba(34,211,238,0.2)]"
+            />
+          </div>
+
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-[rgba(34,211,238,0.1)] text-accent px-5 py-2 rounded-[20px] text-[0.85rem] font-semibold mb-6 border border-[rgba(34,211,238,0.2)] backdrop-blur-sm break-words relative z-10">
             <MinecraftIcon type="shield" size={16} color="#22d3ee" />
