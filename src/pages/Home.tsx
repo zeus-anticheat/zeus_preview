@@ -15,7 +15,7 @@ const Home: React.FC<HomeProps> = ({ language }) => {
 
   return (
     <main>
-      <Hero content={content.hero} />
+      <Hero content={content.hero} freeTrialBanner={content.freeTrialBanner} />
       <AudiencePaths content={content.audiences} />
       <Features content={content.features} />
       <Architecture content={content.protectionModes} />

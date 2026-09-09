@@ -55,11 +55,18 @@ export type OperationsPanelContent = {
 
 export type HomeContent = {
   nav: {
+    home: string;
     features: string;
     docs: string;
     evaluation: string;
     github: string;
     discord: string;
+  };
+  freeTrialBanner: {
+    badge: string;
+    highlight: string;
+    text: string;
+    cta: string;
   };
   hero: {
     badge: string;
@@ -117,11 +124,18 @@ export type HomeContent = {
 export const HOME_CONTENT: Record<LanguageCode, HomeContent> = {
   en: {
     nav: {
+      home: "Home",
       features: "Features",
       docs: "Docs",
       evaluation: "See workflows",
       github: "GitHub",
       discord: "Discord",
+    },
+    freeTrialBanner: {
+      badge: "Free Trial Program",
+      highlight: "50+ CCU Servers:",
+      text: "Complimentary full platform access and onboarding assistance for established communities.",
+      cta: "Apply on Discord",
     },
     hero: {
       badge: "Minecraft server protection",
@@ -357,11 +371,18 @@ export const HOME_CONTENT: Record<LanguageCode, HomeContent> = {
   },
   vi: {
     nav: {
+      home: "Trang chủ",
       features: "Tính năng",
       docs: "Tài liệu",
       evaluation: "Xem workflow",
       github: "GitHub",
       discord: "Discord",
+    },
+    freeTrialBanner: {
+      badge: "Dùng thử Miễn phí",
+      highlight: "Máy chủ từ 50 CCU:",
+      text: "Hỗ trợ trải nghiệm toàn diện và hỗ trợ kỹ thuật trực tiếp dành cho máy chủ có từ 50 người chơi.",
+      cta: "Đăng ký qua Discord",
     },
     hero: {
       badge: "Bảo vệ máy chủ Minecraft",

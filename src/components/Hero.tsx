@@ -4,9 +4,10 @@ import type { HomeContent } from '../content/home';
 
 type HeroProps = {
   content: HomeContent['hero'];
+  freeTrialBanner?: HomeContent['freeTrialBanner'];
 };
 
-const Hero: React.FC<HeroProps> = ({ content }) => {
+const Hero: React.FC<HeroProps> = ({ content, freeTrialBanner }) => {
   const scrollToFeatures = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     const el = document.getElementById('features');
@@ -30,6 +31,27 @@ const Hero: React.FC<HeroProps> = ({ content }) => {
       <div className="mc-particle" style={{ top: '70%', left: '50%', animationDelay: '2s' }}></div>
 
       <div className="container-custom relative z-10">
+        {/* Free Trial Announcement Banner */}
+        {freeTrialBanner && (
+          <div className="max-w-2xl mx-auto mb-8">
+            <a
+              href="https://discord.gg/4RR9Tuunuk"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex flex-wrap items-center justify-center gap-2 sm:gap-3 px-4 py-2 rounded-full bg-gradient-to-r from-accent/15 via-purple-500/10 to-accent/15 border border-accent/30 hover:border-accent/60 transition-all text-xs sm:text-sm text-text-main shadow-lg hover:shadow-cyan-500/10 group backdrop-blur-md"
+            >
+              <span className="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-accent text-bg-color uppercase tracking-wider">
+                {freeTrialBanner.badge}
+              </span>
+              <span className="font-semibold text-accent">{freeTrialBanner.highlight}</span>
+              <span className="text-text-sec text-xs sm:text-sm hidden sm:inline">{freeTrialBanner.text}</span>
+              <span className="inline-flex items-center gap-1 text-xs font-bold text-accent group-hover:translate-x-0.5 transition-transform">
+                {freeTrialBanner.cta} <i className="fa-solid fa-arrow-right text-[10px]"></i>
+              </span>
+            </a>
+          </div>
+        )}
+
         {/* Badge */}
         <div className="inline-flex items-center gap-2 bg-[rgba(34,211,238,0.1)] text-accent px-5 py-2 rounded-[20px] text-[0.85rem] font-semibold mb-6 border border-[rgba(34,211,238,0.2)] backdrop-blur-sm break-words">
           <MinecraftIcon type="shield" size={16} color="#22d3ee" />

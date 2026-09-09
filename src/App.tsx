@@ -66,6 +66,7 @@ function App() {
                         </Link>
                         <div className="flex items-center gap-6">
                           <nav className="hidden md:flex gap-8 items-center">
+                            <Link to="/" className="text-text-sec hover:text-text-main no-underline text-[0.95rem] font-medium transition-colors">{content.nav.home}</Link>
                             <button
                                 type="button"
                                 onClick={() => {
