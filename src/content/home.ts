@@ -60,6 +60,7 @@ export type HomeContent = {
     lab: string;
     evaluation: string;
     github: string;
+    discord: string;
   };
   hero: {
     badge: string;
@@ -122,6 +123,7 @@ export const HOME_CONTENT: Record<LanguageCode, HomeContent> = {
       lab: "Lab",
       evaluation: "See workflows",
       github: "GitHub",
+      discord: "Discord",
     },
     hero: {
       badge: "Minecraft server protection",
@@ -362,6 +364,7 @@ export const HOME_CONTENT: Record<LanguageCode, HomeContent> = {
       lab: "Phòng Lab",
       evaluation: "Xem workflow",
       github: "GitHub",
+      discord: "Discord",
     },
     hero: {
       badge: "Bảo vệ máy chủ Minecraft",

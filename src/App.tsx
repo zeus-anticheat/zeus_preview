@@ -81,7 +81,10 @@ function App() {
                             </button>
                             <Link to="/docs" className="text-text-sec hover:text-text-main no-underline text-[0.95rem] font-medium transition-colors">{content.nav.docs}</Link>
                             <Link to="/lab" className="text-text-sec hover:text-text-main no-underline text-[0.95rem] font-medium transition-colors">{content.nav.lab}</Link>
-                            <a href="https://github.com/zeus-anticheat/zeus_anticheat_mc" target="_blank" rel="noopener noreferrer" className="text-text-sec hover:text-text-main no-underline text-[0.95rem] font-medium transition-colors">
+                            <a href="https://discord.gg/4RR9Tuunuk" target="_blank" rel="noopener noreferrer" className="text-text-sec hover:text-text-main no-underline text-[0.95rem] font-medium transition-colors">
+                                <i className="fa-brands fa-discord mr-1 text-[#5865F2]"></i> {content.nav.discord}
+                            </a>
+                            <a href="https://github.com/zeus-anticheat/zeus_platform" target="_blank" rel="noopener noreferrer" className="text-text-sec hover:text-text-main no-underline text-[0.95rem] font-medium transition-colors">
                                 <i className="fa-brands fa-github mr-1"></i> {content.nav.github}
                             </a>
                             <button
@@ -101,14 +104,14 @@ function App() {
                     </div>
                 </header>
 
-                <main className="grow pt-20">
+                <main className="grow">
                     <Routes>
                         <Route path="/" element={<Home language={language} />} />
-                        <Route path="/docs/*" element={<Docs language={language} />} />
-                        <Route path="/lab" element={<Lab language={language} />} />
-                        <Route path="/lab/replay/:sessionId" element={<ReplayViewer language={language} />} />
-                        <Route path="/terms" element={<Terms language={language} />} />
-                        <Route path="/privacy" element={<Privacy language={language} />} />
+                        <Route path="/docs/*" element={<div className="pt-20"><Docs language={language} /></div>} />
+                        <Route path="/lab" element={<div className="pt-20"><Lab language={language} /></div>} />
+                        <Route path="/lab/replay/:sessionId" element={<div className="pt-20"><ReplayViewer language={language} /></div>} />
+                        <Route path="/terms" element={<div className="pt-20"><Terms language={language} /></div>} />
+                        <Route path="/privacy" element={<div className="pt-20"><Privacy language={language} /></div>} />
                     </Routes>
                 </main>
 
