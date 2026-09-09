@@ -27,12 +27,12 @@ const CONTRIBUTORS: Contributor[] = [
     githubUrl: 'https://github.com/VennDev',
     avatarUrl: 'https://github.com/VennDev.png',
     role: {
-      en: 'Lead Architect & Core Creator',
-      vi: 'Kiến trúc sư trưởng & Tác giả chính',
+      en: 'Sole Creator & Lead Developer',
+      vi: 'Tác giả & Nhà phát triển chính',
     },
     bio: {
-      en: 'Created the Zeus Platform architecture, deterministic simulation core, and neural detection engine.',
-      vi: 'Sáng lập kiến trúc Zeus Platform, lõi mô phỏng simulation và hệ thống đánh giá bằng chứng an toàn.',
+      en: 'Architected and built the entire Zeus Platform: Rust core engine, deterministic simulation, ML pipeline, backend, plugins, and web dashboard.',
+      vi: 'Xây dựng toàn bộ nền tảng Zeus Platform: lõi Rust engine, mô phỏng simulation, pipeline ML, backend, hệ thống plugin và web dashboard.',
     },
   },
   {
@@ -41,12 +41,12 @@ const CONTRIBUTORS: Contributor[] = [
     githubUrl: 'https://github.com/KelvinLynn',
     avatarUrl: 'https://github.com/KelvinLynn.png',
     role: {
-      en: 'Core Contributor & Engineering',
-      vi: 'Đóng góp cốt lõi & Kỹ thuật',
+      en: 'Tester & Quality Assurance',
+      vi: 'Kiểm thử viên (Tester)',
     },
     bio: {
-      en: 'Contributed to platform infrastructure, game server adapters, and detection pipeline stability.',
-      vi: 'Đóng góp vào hạ tầng nền tảng, adapter máy chủ game và độ ổn định của pipeline phát hiện.',
+      en: 'Testing, verifying detection accuracy, and reporting false-flag edge cases across Minecraft versions.',
+      vi: 'Tham gia kiểm thử tính năng, kiểm định độ chính xác phát hiện và báo cáo các trường hợp false-flag qua các phiên bản.',
     },
   },
   {
@@ -55,12 +55,12 @@ const CONTRIBUTORS: Contributor[] = [
     githubUrl: 'https://github.com/TranPhat02',
     avatarUrl: 'https://github.com/TranPhat02.png',
     role: {
-      en: 'Core Contributor & Mechanics',
-      vi: 'Đóng góp cốt lõi & Cơ chế',
+      en: 'Tester & Gameplay Verification',
+      vi: 'Kiểm thử viên (Tester)',
     },
     bio: {
-      en: 'Contributed to gameplay physics validation, network checks, and edge-case movement verification.',
-      vi: 'Đóng góp vào kiểm định vật lý gameplay, kiểm tra network và các trường hợp di chuyển đặc biệt.',
+      en: 'Testing gameplay physics, cheat clients verification, and movement mechanics under live server conditions.',
+      vi: 'Kiểm thử cơ chế vật lý gameplay, kiểm tra phát hiện hack/cheat và hành vi di chuyển trong môi trường máy chủ thực tế.',
     },
   },
   {
@@ -69,12 +69,12 @@ const CONTRIBUTORS: Contributor[] = [
     githubUrl: 'https://github.com/DATRIK1910',
     avatarUrl: 'https://github.com/DATRIK1910.png',
     role: {
-      en: 'Core Contributor & Platform Testing',
-      vi: 'Đóng góp cốt lõi & Kiểm thử nền tảng',
+      en: 'Tester & Network Stress Testing',
+      vi: 'Kiểm thử viên (Tester)',
     },
     bio: {
-      en: 'Contributed to multi-version protocol compatibility, community feedback triage, and quality assurance.',
-      vi: 'Đóng góp vào tương thích protocol đa phiên bản, tổng hợp phản hồi cộng đồng và kiểm thử chất lượng.',
+      en: 'Testing multi-version compatibility, latency drift simulation, and community feedback validation.',
+      vi: 'Kiểm thử tương thích đa phiên bản, kiểm tra độ trễ mạng và xác thực phản hồi thực tế từ cộng đồng.',
     },
   },
 ];
