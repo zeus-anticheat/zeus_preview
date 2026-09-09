@@ -132,9 +132,9 @@ export const HOME_CONTENT: Record<LanguageCode, HomeContent> = {
       discord: "Discord",
     },
     freeTrialBanner: {
-      badge: "Free Trial Program",
+      badge: "Free 1-Month Trial",
       highlight: "50+ CCU Servers:",
-      text: "Complimentary full platform access and onboarding assistance for established communities.",
+      text: "Get 1 month of full platform access and onboarding support for your server.",
       cta: "Apply on Discord",
     },
     hero: {
@@ -379,9 +379,9 @@ export const HOME_CONTENT: Record<LanguageCode, HomeContent> = {
       discord: "Discord",
     },
     freeTrialBanner: {
-      badge: "Dùng thử Miễn phí",
+      badge: "Dùng thử 1 tháng",
       highlight: "Máy chủ từ 50 CCU:",
-      text: "Hỗ trợ trải nghiệm toàn diện và hỗ trợ kỹ thuật trực tiếp dành cho máy chủ có từ 50 người chơi.",
+      text: "Nhận 1 tháng trải nghiệm miễn phí toàn bộ nền tảng kèm hỗ trợ kỹ thuật trực tiếp.",
       cta: "Đăng ký qua Discord",
     },
     hero: {

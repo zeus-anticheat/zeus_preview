@@ -18,8 +18,8 @@ const Terms: React.FC<TermsProps> = ({ language }) => {
       intro: 'Welcome to Zeus Anti-Cheat Platform. By using our platform, plugins, and related services, you agree to these Terms of Service. Please read them carefully.',
       freeTrialNotice: {
         badge: 'Special Community Offer',
-        title: 'Free Trial Program (50+ CCU Servers)',
-        content: 'Zeus currently offers a complimentary evaluation program and dedicated onboarding support for Minecraft servers maintaining an average concurrent player count of 50 or more. Server administrators can apply directly via our official Discord community.',
+        title: 'Free 1-Month Trial Program (50+ CCU Servers)',
+        content: 'Zeus currently offers a complimentary 1-month full evaluation license and dedicated onboarding support for Minecraft servers maintaining an average concurrent player count of 50 or more. Server administrators can apply directly via our official Discord community.',
       },
       sections: [
         {
@@ -50,8 +50,8 @@ const Terms: React.FC<TermsProps> = ({ language }) => {
       intro: 'Chào mừng đến với Nền tảng Zeus Anti-Cheat. Khi sử dụng nền tảng, plugin và các dịch vụ liên quan của chúng tôi, bạn đồng ý với các Điều khoản Dịch vụ này. Vui lòng đọc kỹ.',
       freeTrialNotice: {
         badge: 'Chương trình Hỗ trợ Máy chủ',
-        title: 'Chính sách Dùng thử Miễn phí (Máy chủ từ 50 người chơi)',
-        content: 'Zeus hiện đang có chính sách hỗ trợ cung cấp dùng thử miễn phí kèm hỗ trợ kỹ thuật trực tiếp dành cho các máy chủ có lượng người chơi trực tuyến đồng thời (CCU) từ 50 trở lên. Quản trị viên máy chủ có thể liên hệ đăng ký trải nghiệm thông qua Discord chính thức của chúng tôi.',
+        title: 'Chính sách Dùng thử Miễn phí 1 Tháng (Máy chủ từ 50 người chơi)',
+        content: 'Zeus hiện đang có chính sách hỗ trợ cung cấp 1 tháng dùng thử miễn phí toàn bộ tính năng kèm hỗ trợ kỹ thuật trực tiếp dành cho các máy chủ có lượng người chơi trực tuyến đồng thời (CCU) từ 50 trở lên. Quản trị viên máy chủ có thể liên hệ đăng ký trải nghiệm thông qua Discord chính thức của chúng tôi.',
       },
       sections: [
         {
