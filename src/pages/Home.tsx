@@ -17,15 +17,7 @@ const Home: React.FC<HomeProps> = ({ language }) => {
     <main>
       <Hero content={content.hero} />
       <AudiencePaths content={content.audiences} />
-      
-      {/* Pixel divider */}
-      <div className="pixel-divider"></div>
-
       <Features content={content.features} />
-
-      {/* Pixel divider */}
-      <div className="pixel-divider"></div>
-
       <Architecture content={content.protectionModes} />
       <OperationsConsole content={content.operationsConsole} />
     </main>
