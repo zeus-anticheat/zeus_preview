@@ -58,6 +58,7 @@ export type HomeContent = {
     home: string;
     features: string;
     docs: string;
+    contributors: string;
     evaluation: string;
     github: string;
     discord: string;
@@ -117,6 +118,7 @@ export type HomeContent = {
       enterprise: string;
       terms: string;
       privacy: string;
+      contributors: string;
     };
   };
 };
@@ -127,6 +129,7 @@ export const HOME_CONTENT: Record<LanguageCode, HomeContent> = {
       home: "Home",
       features: "Features",
       docs: "Docs",
+      contributors: "Contributors",
       evaluation: "See workflows",
       github: "GitHub",
       discord: "Discord",
@@ -366,6 +369,7 @@ export const HOME_CONTENT: Record<LanguageCode, HomeContent> = {
         enterprise: "Enterprise Support",
         terms: "Terms of Service",
         privacy: "Privacy Policy",
+        contributors: "Contributors",
       },
     },
   },
@@ -374,6 +378,7 @@ export const HOME_CONTENT: Record<LanguageCode, HomeContent> = {
       home: "Trang chủ",
       features: "Tính năng",
       docs: "Tài liệu",
+      contributors: "Đóng góp",
       evaluation: "Xem workflow",
       github: "GitHub",
       discord: "Discord",
@@ -613,6 +618,7 @@ export const HOME_CONTENT: Record<LanguageCode, HomeContent> = {
         enterprise: "Hỗ trợ doanh nghiệp",
         terms: "Điều khoản dịch vụ",
         privacy: "Chính sách bảo mật",
+        contributors: "Người đóng góp",
       },
     },
   },

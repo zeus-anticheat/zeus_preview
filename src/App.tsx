@@ -3,6 +3,7 @@ import Home from './pages/Home';
 import Docs from './pages/Docs';
 import Terms from './pages/Terms';
 import Privacy from './pages/Privacy';
+import Contributors from './pages/Contributors';
 import { useEffect, useState } from 'react';
 import MinecraftIcon from './components/MinecraftIcon';
 import LanguageToggle from './components/LanguageToggle';
@@ -83,6 +84,7 @@ function App() {
                                 {content.nav.features}
                             </button>
                             <Link to="/docs" className="text-text-sec hover:text-text-main no-underline text-[0.95rem] font-medium transition-colors">{content.nav.docs}</Link>
+                            <Link to="/contributors" className="text-text-sec hover:text-text-main no-underline text-[0.95rem] font-medium transition-colors">{content.nav.contributors}</Link>
                             <a href="https://discord.gg/4RR9Tuunuk" target="_blank" rel="noopener noreferrer" className="text-text-sec hover:text-text-main no-underline text-[0.95rem] font-medium transition-colors">
                                 <i className="fa-brands fa-discord mr-1 text-[#5865F2]"></i> {content.nav.discord}
                             </a>
@@ -138,6 +140,14 @@ function App() {
                             <span>{content.nav.docs}</span>
                             <i className="fa-solid fa-chevron-right text-xs opacity-40"></i>
                           </Link>
+                          <Link
+                            to="/contributors"
+                            onClick={() => setMobileMenuOpen(false)}
+                            className="text-text-sec hover:text-accent font-semibold text-[0.95rem] py-2 border-b border-white/5 flex items-center justify-between no-underline"
+                          >
+                            <span>{content.nav.contributors}</span>
+                            <i className="fa-solid fa-chevron-right text-xs opacity-40"></i>
+                          </Link>
                           <a
                             href="https://discord.gg/4RR9Tuunuk"
                             target="_blank"
@@ -160,6 +170,7 @@ function App() {
                     <Routes>
                         <Route path="/" element={<Home language={language} />} />
                         <Route path="/docs/*" element={<div className="pt-20"><Docs language={language} /></div>} />
+                        <Route path="/contributors" element={<div className="pt-20"><Contributors language={language} /></div>} />
                         <Route path="/terms" element={<div className="pt-20"><Terms language={language} /></div>} />
                         <Route path="/privacy" element={<div className="pt-20"><Privacy language={language} /></div>} />
                     </Routes>
@@ -198,6 +209,7 @@ function App() {
                                 <ul className="list-none p-0 m-0">
                                     <li className="mb-3"><a href="#" className="text-text-sec hover:text-accent no-underline text-[0.9rem] transition-colors">{content.footer.links.premium}</a></li>
                                     <li className="mb-3"><a href="#" className="text-text-sec hover:text-accent no-underline text-[0.9rem] transition-colors">{content.footer.links.enterprise}</a></li>
+                                    <li className="mb-3"><Link to="/contributors" className="text-text-sec hover:text-accent no-underline text-[0.9rem] transition-colors">{content.footer.links.contributors}</Link></li>
                                     <li className="mb-3"><Link to="/terms" className="text-text-sec hover:text-accent no-underline text-[0.9rem] transition-colors">{content.footer.links.terms}</Link></li>
                                     <li className="mb-3"><Link to="/privacy" className="text-text-sec hover:text-accent no-underline text-[0.9rem] transition-colors">{content.footer.links.privacy}</Link></li>
                                 </ul>
