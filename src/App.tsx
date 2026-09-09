@@ -24,6 +24,8 @@ function App() {
         }
     });
 
+    const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
+
     useEffect(() => {
         const handleScroll = () => {
             const header = document.querySelector('header');
@@ -58,14 +60,16 @@ function App() {
         <Router>
             <div id="root-container" className="min-h-screen flex flex-col bg-bg-color text-text-main font-sans">
                 {/* Navigation */}
-                <header className="fixed w-full top-0 z-50 transition-all duration-300 border-b border-card-border bg-[rgba(10,10,10,0.85)] backdrop-blur-md py-4">
+                <header className="fixed w-full top-0 z-50 transition-all duration-300 border-b border-card-border bg-[rgba(10,10,10,0.85)] backdrop-blur-md py-3 sm:py-4">
                     <div className="max-w-[1200px] mx-auto px-4 md:px-8 flex justify-between items-center w-full">
-                        <Link to="/" className="flex items-center gap-3 text-2xl font-cinzel font-bold text-text-main no-underline tracking-wider">
-                            <img src="/icon.webp" alt="Zeus" className="w-8 h-8 object-contain" />
+                        <Link to="/" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-2.5 sm:gap-3 text-xl sm:text-2xl font-cinzel font-bold text-text-main no-underline tracking-wider">
+                            <img src="/icon.webp" alt="Zeus" className="w-7 h-7 sm:w-8 sm:h-8 object-contain" />
                             ZEUS
                         </Link>
-                        <div className="flex items-center gap-6">
-                          <nav className="hidden md:flex gap-8 items-center">
+
+                        {/* Desktop Navigation */}
+                        <div className="hidden md:flex items-center gap-6">
+                          <nav className="flex gap-8 items-center">
                             <Link to="/" className="text-text-sec hover:text-text-main no-underline text-[0.95rem] font-medium transition-colors">{content.nav.home}</Link>
                             <button
                                 type="button"
@@ -83,10 +87,73 @@ function App() {
                                 <i className="fa-brands fa-discord mr-1 text-[#5865F2]"></i> {content.nav.discord}
                             </a>
                           </nav>
-                          <div className="hidden md:block w-px h-4 bg-card-border"></div>
+                          <div className="w-px h-4 bg-card-border"></div>
                           <LanguageToggle language={language} onChange={setLanguage} />
                         </div>
+
+                        {/* Mobile Navigation Controls */}
+                        <div className="flex md:hidden items-center gap-2.5">
+                          <LanguageToggle language={language} onChange={setLanguage} />
+                          <button
+                            type="button"
+                            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                            aria-label="Toggle navigation menu"
+                            className="w-8 h-8 flex items-center justify-center rounded-lg border border-card-border bg-white/[0.04] text-text-sec hover:text-text-main"
+                          >
+                            <i className={`fa-solid ${mobileMenuOpen ? 'fa-xmark' : 'fa-bars'} text-sm`}></i>
+                          </button>
+                        </div>
                     </div>
+
+                    {/* Mobile Dropdown Drawer */}
+                    {mobileMenuOpen && (
+                      <div className="md:hidden border-t border-card-border bg-[#07090e]/95 backdrop-blur-xl px-5 py-5 mt-3 shadow-2xl animate-in fade-in duration-150">
+                        <nav className="flex flex-col gap-3.5">
+                          <Link
+                            to="/"
+                            onClick={() => setMobileMenuOpen(false)}
+                            className="text-text-sec hover:text-accent font-semibold text-[0.95rem] py-2 border-b border-white/5 flex items-center justify-between no-underline"
+                          >
+                            <span>{content.nav.home}</span>
+                            <i className="fa-solid fa-chevron-right text-xs opacity-40"></i>
+                          </Link>
+                          <button
+                            type="button"
+                            onClick={() => {
+                              setMobileMenuOpen(false);
+                              const el = document.getElementById('features');
+                              if (el) el.scrollIntoView({ behavior: 'smooth' });
+                              else window.location.href = '/#features';
+                            }}
+                            className="text-left text-text-sec hover:text-accent font-semibold text-[0.95rem] py-2 border-b border-white/5 flex items-center justify-between bg-transparent border-0 cursor-pointer p-0"
+                          >
+                            <span>{content.nav.features}</span>
+                            <i className="fa-solid fa-chevron-right text-xs opacity-40"></i>
+                          </button>
+                          <Link
+                            to="/docs"
+                            onClick={() => setMobileMenuOpen(false)}
+                            className="text-text-sec hover:text-accent font-semibold text-[0.95rem] py-2 border-b border-white/5 flex items-center justify-between no-underline"
+                          >
+                            <span>{content.nav.docs}</span>
+                            <i className="fa-solid fa-chevron-right text-xs opacity-40"></i>
+                          </Link>
+                          <a
+                            href="https://discord.gg/4RR9Tuunuk"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={() => setMobileMenuOpen(false)}
+                            className="text-text-sec hover:text-accent font-semibold text-[0.95rem] py-2 flex items-center justify-between no-underline"
+                          >
+                            <span className="flex items-center gap-2">
+                              <i className="fa-brands fa-discord text-[#5865F2]"></i>
+                              {content.nav.discord}
+                            </span>
+                            <i className="fa-solid fa-arrow-up-right-from-square text-xs opacity-40"></i>
+                          </a>
+                        </nav>
+                      </div>
+                    )}
                 </header>
 
                 <main className="grow">
