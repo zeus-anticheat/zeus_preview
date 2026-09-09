@@ -82,7 +82,7 @@ const Terms: React.FC<TermsProps> = ({ language }) => {
 
   return (
     <div className="max-w-[800px] mx-auto px-6 py-12 md:py-20">
-      <h1 className="text-3xl md:text-4xl font-cinzel font-bold text-text-main mb-4">{copy.title}</h1>
+      <h1 className="text-3xl md:text-4xl font-bold font-heading text-text-main mb-4 tracking-tight">{copy.title}</h1>
       <p className="text-text-sec text-sm mb-8">{copy.lastUpdated}</p>
 
       <div className="prose prose-invert max-w-none text-text-sec">

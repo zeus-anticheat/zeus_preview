@@ -119,7 +119,7 @@ const Contributors: React.FC<ContributorsProps> = ({ language }) => {
           <i className="fa-solid fa-code-fork text-sky-400"></i>
           {copy.badge}
         </div>
-        <h1 className="text-3xl md:text-5xl font-bold font-cinzel text-text-main mb-4 tracking-wide">
+        <h1 className="text-3xl md:text-5xl font-bold font-heading text-text-main mb-4 tracking-tight">
           {copy.title}
         </h1>
         <p className="text-text-sec text-base md:text-lg leading-relaxed">
