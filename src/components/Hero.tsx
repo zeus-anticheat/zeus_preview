@@ -64,20 +64,18 @@ const Hero: React.FC<HeroProps> = ({ content, freeTrialBanner }) => {
 
         {/* Free Trial Announcement Banner (Below CTAs) */}
         {freeTrialBanner && (
-          <div className="max-w-2xl mx-auto">
+          <div className="max-w-xl mx-auto pt-2">
             <a
               href="https://discord.gg/4RR9Tuunuk"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex flex-wrap items-center justify-center gap-2 sm:gap-3 px-5 py-2.5 rounded-full bg-gradient-to-r from-accent/15 via-purple-500/10 to-accent/15 border border-accent/30 hover:border-accent/60 transition-all text-xs sm:text-sm text-text-main shadow-lg hover:shadow-cyan-500/10 group backdrop-blur-md"
+              className="inline-flex flex-wrap items-center justify-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.03] hover:bg-white/[0.06] border border-card-border/80 hover:border-text-sec/40 transition-all text-xs text-text-sec hover:text-text-main group"
             >
-              <span className="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-accent text-bg-color uppercase tracking-wider">
-                {freeTrialBanner.badge}
-              </span>
-              <span className="font-semibold text-accent">{freeTrialBanner.highlight}</span>
-              <span className="text-text-sec text-xs sm:text-sm hidden sm:inline">{freeTrialBanner.text}</span>
-              <span className="inline-flex items-center gap-1 text-xs font-bold text-accent group-hover:translate-x-0.5 transition-transform">
-                {freeTrialBanner.cta} <i className="fa-solid fa-arrow-right text-[10px]"></i>
+              <span className="w-1.5 h-1.5 rounded-full bg-accent/70"></span>
+              <span className="font-medium text-text-main">{freeTrialBanner.highlight}</span>
+              <span className="text-text-sec hidden sm:inline">{freeTrialBanner.text}</span>
+              <span className="inline-flex items-center gap-1 font-semibold text-accent/90 group-hover:text-accent group-hover:underline">
+                {freeTrialBanner.cta} <i className="fa-solid fa-arrow-right text-[9px] group-hover:translate-x-0.5 transition-transform"></i>
               </span>
             </a>
           </div>
