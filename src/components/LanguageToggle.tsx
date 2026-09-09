@@ -11,9 +11,12 @@ const LanguageToggle: FC<LanguageToggleProps> = ({ language, onChange }) => {
   return (
     <div
       aria-label="Change site language"
-      className="inline-flex h-10 shrink-0 items-center rounded-lg border border-card-border bg-white/5 p-1"
+      className="inline-flex h-8 items-center rounded-full border border-card-border bg-white/[0.03] p-0.5 backdrop-blur-sm shadow-inner"
       role="group"
     >
+      <div className="pl-2 pr-1 text-text-sec/60 text-xs select-none">
+        <i className="fa-solid fa-globe"></i>
+      </div>
       {LANGUAGES.map((entry) => {
         const active = entry.code === language;
 
@@ -23,10 +26,10 @@ const LanguageToggle: FC<LanguageToggleProps> = ({ language, onChange }) => {
             type="button"
             aria-label={entry.accessibleLabel}
             aria-pressed={active}
-            className={`h-8 w-10 rounded-md text-sm font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-bg-color ${
+            className={`h-6 px-2.5 rounded-full text-xs font-semibold tracking-wide transition-all cursor-pointer select-none focus:outline-none ${
               active
-                ? 'border border-accent/50 bg-accent/15 text-accent'
-                : 'border border-transparent text-text-sec hover:text-text-main'
+                ? 'bg-accent/20 text-accent shadow-xs border border-accent/40'
+                : 'text-text-sec hover:text-text-main hover:bg-white/5'
             }`}
             onClick={() => onChange(entry.code)}
           >

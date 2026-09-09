@@ -66,7 +66,7 @@ function App() {
                             <img src="/icon.webp" alt="Zeus" className="w-8 h-8 object-contain" />
                             ZEUS
                         </Link>
-                        <div className="flex items-center gap-3">
+                        <div className="flex items-center gap-6">
                           <nav className="hidden md:flex gap-8 items-center">
                             <button
                                 type="button"
@@ -85,6 +85,7 @@ function App() {
                                 <i className="fa-brands fa-discord mr-1 text-[#5865F2]"></i> {content.nav.discord}
                             </a>
                           </nav>
+                          <div className="hidden md:block w-px h-4 bg-card-border"></div>
                           <LanguageToggle language={language} onChange={setLanguage} />
                         </div>
                     </div>
