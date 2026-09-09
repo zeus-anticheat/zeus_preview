@@ -91,24 +91,24 @@ const Terms: React.FC<TermsProps> = ({ language }) => {
         </p>
 
         {/* Free Trial Highlight Box */}
-        <div className="mb-10 p-6 rounded-2xl bg-gradient-to-r from-accent/10 via-accent/5 to-transparent border border-accent/30 shadow-lg relative overflow-hidden">
+        <div className="mb-10 p-6 rounded-2xl bg-gradient-to-r from-sky-500/10 via-sky-500/5 to-transparent border border-sky-500/30 shadow-lg relative overflow-hidden">
           <div className="flex items-center gap-2 mb-3">
-            <span className="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-accent text-bg-color">
+            <span className="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-sky-400 text-bg-color">
               {copy.freeTrialNotice.badge}
             </span>
-            <span className="text-accent text-xs font-mono font-semibold">50+ CCU</span>
+            <span className="text-emerald-400 text-xs font-mono font-semibold">50+ CCU</span>
           </div>
           <h3 className="text-lg font-bold text-text-main mb-2 font-heading">
             {copy.freeTrialNotice.title}
           </h3>
-          <p className="text-text-sec text-sm leading-relaxed mb-4">
+          <p className="text-slate-200 text-sm leading-relaxed mb-4">
             {copy.freeTrialNotice.content}
           </p>
           <a
             href="https://discord.gg/4RR9Tuunuk"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-xs font-bold text-accent hover:underline"
+            className="inline-flex items-center gap-2 text-xs font-bold text-sky-400 hover:text-sky-300 hover:underline"
           >
             <i className="fa-brands fa-discord"></i>
             {language === 'en' ? 'Join Discord to apply' : 'Tham gia Discord để đăng ký'} &rarr;
