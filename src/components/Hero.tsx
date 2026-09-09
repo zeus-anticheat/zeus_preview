@@ -1,5 +1,6 @@
 import React from 'react';
 import MinecraftIcon from './MinecraftIcon';
+import MinecraftWarrior from './MinecraftWarrior';
 import type { HomeContent } from '../content/home';
 
 type HeroProps = {
@@ -32,13 +33,9 @@ const Hero: React.FC<HeroProps> = ({ content, freeTrialBanner }) => {
 
       <div className="container-custom relative z-10">
         <div className="relative max-w-4xl mx-auto">
-          {/* Decorative Minecraft Warrior floating on side for desktop */}
-          <div className="hidden xl:block absolute -right-36 -bottom-10 w-72 pointer-events-none select-none opacity-85 z-0 transition-transform duration-700 hover:scale-105">
-            <img
-              src="/warrior.webp"
-              alt="Zeus Minecraft Warrior"
-              className="w-full h-auto drop-shadow-[0_15px_35px_rgba(34,211,238,0.25)]"
-            />
+          {/* Procedural 3D Vector Minecraft Warrior illustration */}
+          <div className="hidden xl:block absolute -right-36 -bottom-16 w-80 pointer-events-none select-none opacity-90 z-0 transition-transform duration-700 hover:scale-105">
+            <MinecraftWarrior size={320} className="w-full h-auto drop-shadow-[0_20px_40px_rgba(34,211,238,0.2)]" />
           </div>
 
           {/* Badge */}
