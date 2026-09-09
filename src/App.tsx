@@ -1,8 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Home from './pages/Home';
 import Docs from './pages/Docs';
-import Lab from './pages/Lab';
-import ReplayViewer from './pages/ReplayViewer';
 import Terms from './pages/Terms';
 import Privacy from './pages/Privacy';
 import { useEffect, useState } from 'react';
@@ -80,7 +78,6 @@ function App() {
                                 {content.nav.features}
                             </button>
                             <Link to="/docs" className="text-text-sec hover:text-text-main no-underline text-[0.95rem] font-medium transition-colors">{content.nav.docs}</Link>
-                            <Link to="/lab" className="text-text-sec hover:text-text-main no-underline text-[0.95rem] font-medium transition-colors">{content.nav.lab}</Link>
                             <a href="https://discord.gg/4RR9Tuunuk" target="_blank" rel="noopener noreferrer" className="text-text-sec hover:text-text-main no-underline text-[0.95rem] font-medium transition-colors">
                                 <i className="fa-brands fa-discord mr-1 text-[#5865F2]"></i> {content.nav.discord}
                             </a>
@@ -95,8 +92,6 @@ function App() {
                     <Routes>
                         <Route path="/" element={<Home language={language} />} />
                         <Route path="/docs/*" element={<div className="pt-20"><Docs language={language} /></div>} />
-                        <Route path="/lab" element={<div className="pt-20"><Lab language={language} /></div>} />
-                        <Route path="/lab/replay/:sessionId" element={<div className="pt-20"><ReplayViewer language={language} /></div>} />
                         <Route path="/terms" element={<div className="pt-20"><Terms language={language} /></div>} />
                         <Route path="/privacy" element={<div className="pt-20"><Privacy language={language} /></div>} />
                     </Routes>
