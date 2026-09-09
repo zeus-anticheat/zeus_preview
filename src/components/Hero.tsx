@@ -79,12 +79,12 @@ const Hero: React.FC<HeroProps> = ({ content, freeTrialBanner }) => {
                 href="https://discord.gg/4RR9Tuunuk"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex flex-wrap items-center justify-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.02] hover:bg-white/[0.05] border border-card-border hover:border-text-sec/30 transition-all text-xs text-text-sec hover:text-text-main group"
+                className="inline-flex flex-wrap items-center justify-center gap-2.5 px-4 py-1.5 rounded-full bg-white/[0.04] hover:bg-white/[0.07] border border-card-border hover:border-slate-600 transition-all text-xs text-text-sec hover:text-text-main group shadow-sm"
               >
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-                <span className="font-medium text-text-main">{freeTrialBanner.highlight}</span>
-                <span className="text-text-sec hidden sm:inline">{freeTrialBanner.text}</span>
-                <span className="inline-flex items-center gap-1 font-semibold text-text-main group-hover:underline">
+                <span className="font-semibold text-emerald-300">{freeTrialBanner.highlight}</span>
+                <span className="text-slate-300 font-normal hidden sm:inline">{freeTrialBanner.text}</span>
+                <span className="inline-flex items-center gap-1 font-semibold text-sky-400 group-hover:text-sky-300 group-hover:underline">
                   {freeTrialBanner.cta} <i className="fa-solid fa-arrow-right text-[9px] group-hover:translate-x-0.5 transition-transform"></i>
                 </span>
               </a>
