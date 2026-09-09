@@ -201,7 +201,7 @@ const Contributors: React.FC<ContributorsProps> = ({ language }) => {
             {copy.joinDiscord}
           </a>
           <a
-            href="https://github.com/zeus-anticheat/zeus_platform"
+            href="https://github.com/zeus-anticheat"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2.5 px-6 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 text-text-main border border-card-border text-xs sm:text-sm font-semibold transition-all no-underline"
