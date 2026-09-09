@@ -14,8 +14,8 @@ const AudiencePaths: React.FC<AudiencePathsProps> = ({ content }) => {
 
       <div className="container-custom">
         <div className="max-w-[760px] mx-auto text-center mb-16 flex flex-col items-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 border border-accent/20 text-accent text-xs font-semibold uppercase tracking-wider mb-4">
-            <MinecraftIcon type="shield" size={13} color="#22d3ee" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-card-border text-text-sec text-xs font-semibold uppercase tracking-wider mb-4">
+            <MinecraftIcon type="shield" size={13} color="#94a3b8" />
             Roles & Value Paths
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gradient">{content.heading}</h2>
@@ -25,7 +25,7 @@ const AudiencePaths: React.FC<AudiencePathsProps> = ({ content }) => {
         <div className="grid-layout grid-3">
           {content.cards.map((card) => (
             <article
-              className="glass-card flex flex-col p-7 hover:-translate-y-1.5 transition-all duration-300 bg-[rgba(15,19,29,0.7)] border-card-border hover:border-accent/40 shadow-xl"
+              className="glass-card flex flex-col p-7 hover:-translate-y-1.5 transition-all duration-300 bg-[rgba(15,19,29,0.7)] border-card-border hover:border-slate-600 shadow-xl"
               key={card.id}
             >
               <div

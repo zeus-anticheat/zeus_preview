@@ -15,8 +15,8 @@ const Features: React.FC<FeaturesProps> = ({ content }) => {
 
       <div className="container-custom">
         <div className="text-center max-w-[700px] mx-auto mb-16 flex flex-col items-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-semibold uppercase tracking-wider mb-4">
-            <MinecraftIcon type="diamond" size={13} color="#22d3ee" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-card-border text-text-sec text-xs font-semibold uppercase tracking-wider mb-4">
+            <MinecraftIcon type="diamond" size={13} color="#94a3b8" />
             Core Capabilities
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gradient">{content.heading}</h2>
@@ -80,10 +80,10 @@ const Features: React.FC<FeaturesProps> = ({ content }) => {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            <div className="p-5 rounded-xl border border-card-border bg-bg-color/70 hover:border-cyan-500/40 transition-colors flex flex-col justify-between shadow-md">
+            <div className="p-5 rounded-xl border border-card-border bg-bg-color/70 hover:border-sky-500/40 transition-colors flex flex-col justify-between shadow-md">
               <div>
-                <div className="flex items-center gap-2.5 mb-2.5 text-cyan-400 font-bold text-sm">
-                  <MinecraftIcon type="shield" size={18} color="#22d3ee" />
+                <div className="flex items-center gap-2.5 mb-2.5 text-sky-400 font-bold text-sm">
+                  <MinecraftIcon type="shield" size={18} color="#38bdf8" />
                   <span>Movement & Physics</span>
                 </div>
                 <p className="text-xs text-text-sec mb-4 leading-relaxed">Deterministic simulation against vanilla bounding boxes & tick rates.</p>

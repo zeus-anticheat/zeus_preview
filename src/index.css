@@ -3,16 +3,16 @@
 
 :root {
   --bg-color: #07090e;
-  --card-bg: #12151e;
-  --card-border: #202636;
+  --card-bg: #11141c;
+  --card-border: #1e2433;
   --text-main: #f8fafc;
   --text-sec: #94a3b8;
-  --accent: #22d3ee;
-  --accent-hover: #06b6d4;
+  --accent: #38bdf8;
+  --accent-hover: #0ea5e9;
   --danger: #ef4444;
   --warning: #f59e0b;
   --success: #10b981;
-  --glass-bg: rgba(18, 21, 30, 0.7);
+  --glass-bg: rgba(17, 20, 28, 0.7);
 
   --font-sans: "Inter", "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --font-heading: "Inter", "Plus Jakarta Sans", sans-serif;
@@ -78,7 +78,7 @@ html, body {
 }
 
 .accent-gradient {
-  background: linear-gradient(135deg, var(--accent) 0%, #818cf8 100%);
+  background: linear-gradient(135deg, #f8fafc 0%, #38bdf8 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
