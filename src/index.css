@@ -42,13 +42,15 @@
 }
 
 /* Hardcoded layout classes for reliability */
-body {
+html, body {
   margin: 0;
   padding: 0;
   background-color: var(--bg-color) !important;
   color: var(--text-main);
   font-family: var(--font-sans);
   min-height: 100vh;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 .container-custom {

@@ -58,9 +58,9 @@ function App() {
 
     return (
         <Router>
-            <div id="root-container" className="min-h-screen flex flex-col bg-bg-color text-text-main font-sans">
+            <div id="root-container" className="min-h-screen flex flex-col bg-bg-color text-text-main font-sans overflow-x-hidden w-full relative">
                 {/* Navigation */}
-                <header className="fixed w-full top-0 z-50 transition-all duration-300 border-b border-card-border bg-[rgba(10,10,10,0.85)] backdrop-blur-md py-3 sm:py-4">
+                <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-card-border bg-[rgba(10,10,10,0.85)] backdrop-blur-md py-3 sm:py-4">
                     <div className="max-w-[1200px] mx-auto px-4 md:px-8 flex justify-between items-center w-full">
                         <Link to="/" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-2.5 sm:gap-3 text-xl sm:text-2xl font-cinzel font-bold text-text-main no-underline tracking-wider">
                             <img src="/icon.webp" alt="Zeus" className="w-7 h-7 sm:w-8 sm:h-8 object-contain" />
