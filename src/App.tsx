@@ -84,20 +84,6 @@ function App() {
                             <a href="https://discord.gg/4RR9Tuunuk" target="_blank" rel="noopener noreferrer" className="text-text-sec hover:text-text-main no-underline text-[0.95rem] font-medium transition-colors">
                                 <i className="fa-brands fa-discord mr-1 text-[#5865F2]"></i> {content.nav.discord}
                             </a>
-                            <a href="https://github.com/zeus-anticheat/zeus_platform" target="_blank" rel="noopener noreferrer" className="text-text-sec hover:text-text-main no-underline text-[0.95rem] font-medium transition-colors">
-                                <i className="fa-brands fa-github mr-1"></i> {content.nav.github}
-                            </a>
-                            <button
-                                type="button"
-                                onClick={() => {
-                                    const el = document.getElementById('operations');
-                                    if (el) el.scrollIntoView({ behavior: 'smooth' });
-                                    else window.location.href = '/#operations';
-                                }}
-                                className="bg-white/5 text-text-main border border-card-border backdrop-blur-sm px-4 py-2 rounded-lg text-[0.9rem] font-semibold hover:bg-white/10 hover:border-text-sec transition-all cursor-pointer"
-                            >
-                                {content.nav.evaluation}
-                            </button>
                           </nav>
                           <LanguageToggle language={language} onChange={setLanguage} />
                         </div>
